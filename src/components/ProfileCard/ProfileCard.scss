@@ -6,7 +6,7 @@
     height: 100%;
     // add a border to the right of the card except the last one
     border-right: 1px solid #EEEEEE;
-    padding: 0 3rem;
+    padding: 0 calc(100% / 16);
     &:last-child{
         border-right: none;
     }
@@ -18,6 +18,7 @@
         font-size: 1rem;
         font-weight: 400;
         margin: 0.5rem 0;
+        text-align: center;
     }
     &__field{
         color: #FFFFFF;
