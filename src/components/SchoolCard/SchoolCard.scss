@@ -12,10 +12,16 @@
         justify-content: space-between;
         align-items: center;
     }
+    &__title{
+        font-size: 1.125rem;
+        font-weight: 400;
+        color: #000000;
+        margin: 0;
+    }
     &__menu{
         &-button{
-            height: 2.5rem;
-            width: 2.5rem;
+            height: 2.1875rem;
+            width: 2.1875rem;
             border: 1px solid #EEEEEE;
             border-radius: 50%;
             display: inline-block;
@@ -33,5 +39,11 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+    }
+    &__carousel{
+        display: flex;
+        height: 100%;
+        justify-content: space-around;
+        align-items: center;
     }
 }

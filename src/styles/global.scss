@@ -1,9 +1,7 @@
-@use "./typography.scss" as *;
-
 * {
     // reset all default margins and paddings
     margin: 0;
     padding: 0;
     // reset all default font styles
-    font-family: 'aqua';
+    font-family: 'open sans', sans-serif;
 }
