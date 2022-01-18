@@ -2,7 +2,6 @@ import "./ProfileCard.scss";
 import send from "../../assets/images/send.png";
 
 const ProfileCard = ({ studentData }) => {
-    console.log (studentData);
     return(
         <div className="profile-card">
             <img className="profile-card__headshot" src={studentData.profileImage} alt="" />

@@ -91,7 +91,11 @@ function App() {
             <input className="content__search-bar-input" type="text" placeholder="Search" />
           </form>
         </div>
-        <SchoolCard studentData={studentData} />
+        {/* map out a SchoolCard for each school data */}
+        {data.map((item, key) => (
+          <SchoolCard data={item} studentData={studentData} key={key} />
+        ))}
+        {/* <SchoolCard studentData={studentData} /> */}
       </section>
     </div>
   );

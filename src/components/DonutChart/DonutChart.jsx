@@ -26,8 +26,6 @@ const drawChart = (element, data) => {
     .padAngle(0.02)
     .innerRadius(200)
     .outerRadius(250);
-
-  console.log(data);
   // map out all the properties of the data
   const pieGenerator = d3.pie().value((d) => d.value);
 
