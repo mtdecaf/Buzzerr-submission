@@ -1,6 +1,9 @@
 import "./SchoolCard.scss"
 
-const SchoolCard = () => {
+import ProfileCard from "../ProfileCard/ProfileCard";
+
+const SchoolCard = ({ studentData }) => {
+    console.log (studentData);
     return(
         <div className="school-card">
             <div className="school-card__header">
@@ -12,6 +15,10 @@ const SchoolCard = () => {
                 </div>
             </div>
             <div className="school-card__carousel">
+                {/* map out profile cards for each student */}
+                {studentData.map((item, key) => (
+                    <ProfileCard studentData={item} key={key} /> 
+                ))}
             </div>
         </div>
     )

@@ -5,6 +5,13 @@ import "./styles/global.scss";
 import DonutChart from "./components/DonutChart/DonutChart";
 import SchoolCard from "./components/SchoolCard/SchoolCard";
 
+// imported images
+import DianaLansdowne from "./assets/images/Diana-Lansdowne.png";
+import GypsyHardinge from "./assets/images/Gypsy-Hardinge.png";
+import KlavdiaDedova from "./assets/images/Klavdia-Dedova.png";
+import MarianoRasgado from "./assets/images/Mariano-Rasgado.png";
+
+
 function App() {
   const data = [
     { value: 65, label: "University of Toronto" },
@@ -12,6 +19,38 @@ function App() {
     { value: 15, label: "York University" },
     { value: 10, label: "Western University" },
   ];
+
+  const studentData = [
+    {
+      profileImage: GypsyHardinge,
+      name: "Gypsy Hardinge",
+      field: "Engineering",
+      fieldColor: "#2BCBBA",
+      mutualInterests: 3,
+    },
+    {
+      profileImage: DianaLansdowne,
+      name: "Diane Lansdowne",
+      field: "Science",
+      fieldColor: "#3867D6",
+      mutualInterests: 3,
+    },
+    {
+      profileImage: KlavdiaDedova,
+      name: "Klavdia Dedova",
+      field: "Architecture",
+      fieldColor: "#F1C40F",
+      mutualInterests: 3,
+    },
+    {
+      profileImage: MarianoRasgado,
+      name: "Mariano Rasgado",
+      field: "Law",
+      fieldColor: "#E74C3C",
+      mutualInterests: 3,
+    },
+  ];
+
   return (
     <div className="main">
       <section className="main__sidebar">
@@ -52,7 +91,7 @@ function App() {
             <input className="content__search-bar-input" type="text" placeholder="Search" />
           </form>
         </div>
-        <SchoolCard />
+        <SchoolCard studentData={studentData} />
       </section>
     </div>
   );
