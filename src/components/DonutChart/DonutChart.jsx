@@ -27,19 +27,23 @@ const drawChart = (element, data) => {
     .innerRadius(200)
     .outerRadius(250);
 
-    console.log(data);
-    // map out all the properties of the data
+  console.log(data);
+  // map out all the properties of the data
   const pieGenerator = d3.pie().value((d) => d.value);
 
+  var color = d3.scaleOrdinal()
+  .domain(data)
+  .range(["#4B7BEC", "#F7B731", "#EB3B5A", "#FD9D4F"])
 
   const arcs = svg.selectAll().data(pieGenerator(data)).enter();
   arcs
     .append("path")
     .attr("d", arcGenerator)
-    .style("fill", (d, i) => colors[i % data.length])
+    // .style("fill", (d, i) => colors[i % data.length])
+    .attr('fill', function(d){ return(color(d.data.label)) })
     // create a click event handler for each slice of the pie
     .on("click", (d, i) => {
-        console.log(i.data.key);
+      console.log(i.data.label);
     })
     // create a load in animation
     .transition()
@@ -64,9 +68,9 @@ const DonutChart = ({ data }) => {
   }, [ref]);
 
   return (
-    <div className="container">
-      <div className="graph" ref={ref} />
-    </div>
+    <>
+      <div className="donut-chart" ref={ref} />
+    </>
   );
 };
 
