@@ -3,6 +3,7 @@ import "./styles/global.scss";
 
 // imported components
 import DonutChart from "./components/DonutChart/DonutChart";
+import SchoolCard from "./components/SchoolCard/SchoolCard";
 
 function App() {
   const data = [
@@ -51,6 +52,7 @@ function App() {
             <input className="content__search-bar-input" type="text" placeholder="Search" />
           </form>
         </div>
+        <SchoolCard />
       </section>
     </div>
   );
