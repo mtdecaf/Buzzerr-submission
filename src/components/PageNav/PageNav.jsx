@@ -15,11 +15,26 @@ const PageNav = () => {
             <div className="page-nav__wrap">
                 <h2>Buzzerr</h2>
                 <ul className="page-nav__list page-nav__menu">
-                    <li className="page-nav__menu-item"><img className="page-nav__menu-icon" src={home} alt="home icon"/>home</li>
-                    <li className="page-nav__menu-item page-nav__menu-item--selected"><img className="page-nav__menu-icon" src={explore} alt="explore icon"/>explore</li>
-                    <li className="page-nav__menu-item"><img className="page-nav__menu-icon" src={events} alt="events icon"/>events</li>
-                    <li className="page-nav__menu-item"><img className="page-nav__menu-icon" src={jobs} alt="jobs icon"/>jobs</li>
-                    <li className="page-nav__menu-item"><img className="page-nav__menu-icon" src={messages} alt="messages icon"/>messages</li>
+                    <div className="page-nav__menu-item-wrap">
+                        <li className="page-nav__menu-item"><img className="page-nav__menu-icon" src={home} alt="home icon"/>home</li>
+                        <div className="page-nav__menu-pointer"></div>
+                    </div>
+                    <div className="page-nav__menu-item-wrap">
+                        <li className="page-nav__menu-item page-nav__menu-item--selected"><img className="page-nav__menu-icon" src={explore} alt="explore icon"/>explore</li>
+                        <div className="page-nav__menu-pointer page-nav__menu-pointer--selected"></div>
+                    </div>
+                    <div className="page-nav__menu-item-wrap">
+                        <li className="page-nav__menu-item"><img className="page-nav__menu-icon" src={events} alt="events icon"/>events</li>
+                        <div className="page-nav__menu-pointer"></div>
+                    </div>
+                    <div className="page-nav__menu-item-wrap">
+                        <li className="page-nav__menu-item"><img className="page-nav__menu-icon" src={jobs} alt="jobs icon"/>jobs</li>
+                        <div className="page-nav__menu-pointer"></div>
+                    </div>
+                    <div className="page-nav__menu-item-wrap">
+                        <li className="page-nav__menu-item"><img className="page-nav__menu-icon" src={messages} alt="messages icon"/>messages</li>
+                        <div className="page-nav__menu-pointer"></div>
+                    </div>
                 </ul>
                 <ul className="page-nav__list page-nav__profile">
                     <li className="page-nav__profile-item"><img className="page-nav__profile-icon" src={search} alt="search icon" /></li>

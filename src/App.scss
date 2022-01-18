@@ -51,7 +51,7 @@
         width: 0.5rem;
         border-radius: 50%;
         display: inline-block;
-        margin-right: 0.25rem;
+        margin: 0 0.75rem;
         &-University-of-Toronto{
             background-color: #4B7BEC;
         }
@@ -92,14 +92,14 @@
             left: 0.25rem;
         }
         &-input{
-            width: 15rem;
+            width: 13.25rem;
             height: 2.25rem;
             background: #FFFFFF;
             border: 1px solid #DDDDDD;
             border-radius: 8px;
+            padding: 0 1.75rem;
             &::placeholder{
                 color: #BDBDBD;
-                padding-left: 1.75rem;
             }
         }
     }
