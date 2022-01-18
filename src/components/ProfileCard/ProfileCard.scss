@@ -2,6 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100%;
+    // add a border to the right of the card except the last one
+    border-right: 1px solid #EEEEEE;
+    padding: 0 3rem;
+    &:last-child{
+        border-right: none;
+    }
     &__headshot{
         border-radius: 50%;
         width: 4.875rem;
