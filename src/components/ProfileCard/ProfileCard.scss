@@ -6,7 +6,7 @@
     height: 100%;
     // add a border to the right of the card except the last one
     border-right: 1px solid #EEEEEE;
-    padding: 0 calc(100% / 16);
+    padding: 0 calc(100% / 18);
     &:last-child{
         border-right: none;
     }

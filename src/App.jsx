@@ -1,19 +1,27 @@
+// import styles
 import "./App.scss";
 import "./styles/global.scss";
 
-// imported components
+
+// import components
 import DonutChart from "./components/DonutChart/DonutChart";
 import SchoolCard from "./components/SchoolCard/SchoolCard";
 import PageNav from "./components/PageNav/PageNav";
 
-// imported images
+// import images
 import DianaLansdowne from "./assets/images/Diana-Lansdowne.png";
 import GypsyHardinge from "./assets/images/Gypsy-Hardinge.png";
 import KlavdiaDedova from "./assets/images/Klavdia-Dedova.png";
 import MarianoRasgado from "./assets/images/Mariano-Rasgado.png";
 
+import React, { useState, useEffect } from "react";
+
 
 function App() {
+  // state for the selected school
+  const [selectedSchool, setSelectedSchool] = useState("");
+  console.log(selectedSchool);
+
   const data = [
     { value: 65, label: "University of Toronto" },
     { value: 15, label: "McMaster University" },
@@ -51,6 +59,15 @@ function App() {
       mutualInterests: 3,
     },
   ];
+  useEffect(() => {
+    document.title = "Buzzerr | Explore"
+  }, [])
+
+  const handleSelectSchool = (e) => {
+    // find object in the data array that matches the selected school
+    const school = data.find((school) => school.label === e);
+    setSelectedSchool(school);
+  };
 
   return (
     <div className="App">
@@ -60,7 +77,8 @@ function App() {
           <h2 className="main__sidebar-header">
             Students with your areas of interest
           </h2>
-          <DonutChart data={data} />
+          {/* pass setSelectedSchool to Donut Chart */}
+          <DonutChart data={data} handleSelectSchool={handleSelectSchool} />
           <ul className="main__legend">
             {/* map out the data label */}
             {data.map((item, key) => (
@@ -95,10 +113,9 @@ function App() {
             </form>
           </div>
           {/* map out a SchoolCard for each school data */}
-          {data.map((item, key) => (
+          {selectedSchool ? <SchoolCard data={selectedSchool} studentData={studentData} /> : data.map((item, key) => (
             <SchoolCard data={item} studentData={studentData} key={key} />
           ))}
-          {/* <SchoolCard studentData={studentData} /> */}
         </section>
       </div>
     </div>

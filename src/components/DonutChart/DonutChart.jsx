@@ -4,10 +4,9 @@ import * as d3 from "d3";
 import "./DonutChart.scss";
 
 // function for drawing the chart
-const drawChart = (element, data) => {
-  const colors = ["#05BBD2", "#2070C4", "#EB80F1", "#F5C842", "#37D400"];
+const drawChart = (element, data, handleSelectSchool) => {
+  console.log(handleSelectSchool);
   const boxSize = 500;
-
   d3.select(element).select("svg").remove(); // Remove the old svg
   // Create new svg
   const svg = d3
@@ -41,7 +40,8 @@ const drawChart = (element, data) => {
     .attr('fill', function(d){ return(color(d.data.label)) })
     // create a click event handler for each slice of the pie
     .on("click", (d, i) => {
-      console.log(i.data.label);
+      console.log(i.data.label); 
+      handleSelectSchool(i.data.label);
     })
     // create a load in animation
     .transition()
@@ -56,12 +56,12 @@ const drawChart = (element, data) => {
 };
 
 //   function for displaying the chart
-const DonutChart = ({ data }) => {
+const DonutChart = ({ data, handleSelectSchool }) => {
   const ref = useRef(null);
 
   useEffect(() => {
     if (ref.current) {
-      drawChart(ref.current, data);
+      drawChart(ref.current, data, handleSelectSchool);
     }
   }, [ref]);
 
