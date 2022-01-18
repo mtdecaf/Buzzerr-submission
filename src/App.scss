@@ -1,9 +1,10 @@
 .main{
+    display: flex;
     &__sidebar{
         display: flex;
         flex-direction: column;
         width: 20rem;
-        height: 100vh;
+        height: calc(100vh - 2rem);
         align-items: center;
         margin-top: 2rem;
         &-header{
@@ -47,6 +48,44 @@
         }
         &-Western-University{
             background-color: #FD9D4F;
+        }
+    }
+}
+
+// content
+.content{
+    width: calc(100vw - 20rem);
+    margin: 0 2rem;
+    &__header-wrap{
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem 0;
+    }
+    &__title{
+        font-size: 1.25rem;
+        &--colored{
+            color: #FFA500;
+        }
+    }
+    &__search-bar{
+        position: relative;
+        top:-0.3rem;
+        &-icon{
+            position: absolute;
+            width: 1.5rem;
+            top:0.5rem;
+            left: 0.25rem;
+        }
+        &-input{
+            width: 15rem;
+            height: 2.25rem;
+            background: #FFFFFF;
+            border: 1px solid #DDDDDD;
+            border-radius: 8px;
+            &::placeholder{
+                color: #BDBDBD;
+                padding-left: 1.75rem;
+            }
         }
     }
 }
