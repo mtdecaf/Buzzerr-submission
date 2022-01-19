@@ -13,8 +13,8 @@ import pageNavOverlay from '../../assets/images/page-nav-overlay.png'
 const PageNav = () => {
     return (
         <div className="page-nav">
+            <img className="page-nav__overlay" src={pageNavOverlay} alt="" />
             <div className="page-nav__wrap">
-                <img className="page-nav__overlay" src={pageNavOverlay} alt="" />
                 <h2>Buzzerr</h2>
                 <ul className="page-nav__list page-nav__menu">
                     <div className="page-nav__menu-item-wrap">
