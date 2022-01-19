@@ -28,6 +28,19 @@
             margin-bottom: 2rem;
         }
     }
+    &__donut{
+        &-wrap{
+            position: relative;
+        }
+        &-icon{
+            position: absolute;
+            opacity: 24.67%;
+            width: 5rem;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
     &__legend{
         width: 100%;
         display: flex;

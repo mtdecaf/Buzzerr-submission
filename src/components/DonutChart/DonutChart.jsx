@@ -5,7 +5,6 @@ import "./DonutChart.scss";
 
 // function for drawing the chart
 const drawChart = (element, data, handleSelectSchool) => {
-  console.log(handleSelectSchool);
   const boxSize = 500;
   d3.select(element).select("svg").remove(); // Remove the old svg
   // Create new svg
@@ -40,7 +39,6 @@ const drawChart = (element, data, handleSelectSchool) => {
     .attr('fill', function(d){ return(color(d.data.label)) })
     // create a click event handler for each slice of the pie
     .on("click", (d, i) => {
-      console.log(i.data.label); 
       handleSelectSchool(i.data.label);
     })
     // create a load in animation

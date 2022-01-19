@@ -13,6 +13,7 @@ import DianaLansdowne from "./assets/images/Diana-Lansdowne.png";
 import GypsyHardinge from "./assets/images/Gypsy-Hardinge.png";
 import KlavdiaDedova from "./assets/images/Klavdia-Dedova.png";
 import MarianoRasgado from "./assets/images/Mariano-Rasgado.png";
+import knowledge from "./assets/images/knowledge.png";
 
 import React, { useState, useEffect } from "react";
 
@@ -20,7 +21,6 @@ import React, { useState, useEffect } from "react";
 function App() {
   // state for the selected school
   const [selectedSchool, setSelectedSchool] = useState("");
-  console.log(selectedSchool);
 
   const data = [
     { value: 65, label: "University of Toronto" },
@@ -78,23 +78,15 @@ function App() {
             Students with your areas of interest
           </h2>
           {/* pass setSelectedSchool to Donut Chart */}
-          <DonutChart data={data} handleSelectSchool={handleSelectSchool} />
+          <div className="main__donut-wrap">
+            <img onClick={() => setSelectedSchool("")} className="main__donut-icon" src={knowledge} alt="donut chart center icon" />
+            <DonutChart data={data} handleSelectSchool={handleSelectSchool} />
+          </div>
           <ul className="main__legend">
             {/* map out the data label */}
             {data.map((item, key) => (
-              <li
-                className={`main__school main__school-${item.label.replace(
-                  /\s/g,
-                  "-"
-                )}`}
-                key={key}
-              >
-                <span
-                  className={`main__color-bullet main__color-bullet-${item.label.replace(
-                    /\s/g,
-                    "-"
-                  )}`}
-                ></span>
+              <li className={`main__school main__school-${item.label.replace(/\s/g, "-")}`} key={key}>
+                <span className={`main__color-bullet main__color-bullet-${item.label.replace(/\s/g, "-")}`}></span>
                 <span className="main__legend-text">{item.label}</span>
                 <span className="main__legend-percentage">{item.value}%</span>
               </li>
