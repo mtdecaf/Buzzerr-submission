@@ -13,10 +13,8 @@ const SchoolCard = ({ studentData, data }) => {
         } else {
             selectedSchoolCard = e.target.parentNode.parentNode.parentNode.parentNode;
         }
-        console.log(selectedSchoolCard);
         // find the school-card__carousel
         let schoolCardCarousel = selectedSchoolCard.querySelector(".school-card__carousel");
-        console.log(schoolCardCarousel);
         if (schoolCardCarousel.classList.contains("school-card__carousel--close")) {
             schoolCardCarousel.classList.add("school-card__carousel--open");
             schoolCardCarousel.classList.remove("school-card__carousel--close");

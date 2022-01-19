@@ -66,6 +66,7 @@ function App() {
   const handleSelectSchool = (e) => {
     // find object in the data array that matches the selected school
     const school = data.find((school) => school.label === e);
+    setSelectedSchool("");
     setSelectedSchool(school);
   };
 
