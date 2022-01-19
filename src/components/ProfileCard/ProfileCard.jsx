@@ -8,7 +8,7 @@ const ProfileCard = ({ studentData }) => {
             <h4 className="profile-card__name">{studentData.name}</h4>
             <p style={{backgroundColor: `${studentData.fieldColor}`}} className="profile-card__field">{studentData.field}</p>
             <p className="profile-card__mutual-interests">{studentData.mutualInterests} mutual interests</p>
-            <button className="profile-card__button"><img className="profile-card__button-icon" src={send}/>Buzz</button>
+            <button onClick={() => alert(`Hey, buzz buzz, ${studentData.name}!`)} className="profile-card__button"><img className="profile-card__button-icon" src={send}/>Buzz</button>
         </div>
     )
 }
