@@ -4,13 +4,23 @@
     width: 100vw;
     height: 15rem;
     background-color: #F7B731; /* For browsers that do not support gradients */
-    background-image: linear-gradient(to bottom right, #F7B731, #FD9D4F);
+    background-image: linear-gradient(135deg, #FFA500 0%, #FF5340 100%);
+    position: relative;
     &__wrap{
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 4rem;
         margin: 0 2rem;
+
+    }
+    &__overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
     }
     &__list{
         height: 100%;
@@ -53,6 +63,9 @@
     }
     &__profile{
         gap: 1rem;
+        &-item{
+            cursor: pointer;
+        }
         &-icon{
             width: 1.5rem;
         }

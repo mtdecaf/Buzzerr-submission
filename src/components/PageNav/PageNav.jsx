@@ -8,11 +8,13 @@ import messages from '../../assets/images/messages.png'
 import search from '../../assets/images/search.png'
 import notification from '../../assets/images/notification.png'
 import profile from '../../assets/images/profile.png'
+import pageNavOverlay from '../../assets/images/page-nav-overlay.png'
 
 const PageNav = () => {
     return (
         <div className="page-nav">
             <div className="page-nav__wrap">
+                <img className="page-nav__overlay" src={pageNavOverlay} alt="" />
                 <h2>Buzzerr</h2>
                 <ul className="page-nav__list page-nav__menu">
                     <div className="page-nav__menu-item-wrap">
